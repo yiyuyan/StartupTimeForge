@@ -1,3 +1,4 @@
 {
-  "stf.time": "Game startup took %.1f seconds"
+  "stf.time": "Game startup took %.1f seconds",
+  "stf.kill": ""
 }

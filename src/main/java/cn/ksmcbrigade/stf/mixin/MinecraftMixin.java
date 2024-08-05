@@ -3,7 +3,6 @@ package cn.ksmcbrigade.stf.mixin;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.components.toasts.SystemToast;
 import net.minecraft.client.gui.components.toasts.ToastComponent;
-import net.minecraft.client.resources.language.LanguageManager;
 import net.minecraft.network.chat.Component;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -19,7 +18,6 @@ import java.lang.management.ManagementFactory;
 public class MinecraftMixin {
 
     @Shadow @Final private ToastComponent toast;
-    @Shadow @Final private LanguageManager languageManager;
     @Unique
     public boolean startupTimeForge$startup = true;
 
@@ -29,8 +27,8 @@ public class MinecraftMixin {
 
         long timeMillis = ManagementFactory.getRuntimeMXBean().getUptime();
         float time = ((float) (timeMillis / 1000.0D));
-        Component title = Component.translatable("stf.time",Float.parseFloat(String.format("%.2f",time).replace("Format error:","")));
-        SystemToast.addOrUpdate(this.toast, SystemToast.SystemToastIds.PERIODIC_NOTIFICATION, title,this.languageManager.getSelected().equals("zh_cn")?(time*3F>100F?Component.nullToEmpty("打败了全国"+String.format("%.2f",time/3F)+"%的玩家"):Component.nullToEmpty("打败了全国"+String.format("%.2f",time*3F)+"%的玩家")):Component.empty());
+        Component title = Component.translatable("stf.time",time);
+        SystemToast.addOrUpdate(this.toast, SystemToast.SystemToastIds.PERIODIC_NOTIFICATION, title,Component.empty());
         startupTimeForge$startup = false;
     }
 }

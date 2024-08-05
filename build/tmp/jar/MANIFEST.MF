@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Specification-Title: stf
+Specification-Vendor: KSmc_brigade
+Specification-Version: 1
+Implementation-Title: StartupTimeForge
+Implementation-Version: cn.ksmcbrigade
+Implementation-Vendor: KSmc_brigade
+Implementation-Timestamp: 2024-08-05T20:14:47+0800
+MixinConfigs: stf.mixins.json
+

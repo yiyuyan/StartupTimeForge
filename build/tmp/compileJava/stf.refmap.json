@@ -1,0 +1,14 @@
+{
+  "mappings": {
+    "cn/ksmcbrigade/stf/mixin/MinecraftMixin": {
+      "onGameLoadFinished": "Lnet/minecraft/client/Minecraft;m_286052_()V"
+    }
+  },
+  "data": {
+    "searge": {
+      "cn/ksmcbrigade/stf/mixin/MinecraftMixin": {
+        "onGameLoadFinished": "Lnet/minecraft/client/Minecraft;m_286052_()V"
+      }
+    }
+  }
+}
